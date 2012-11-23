@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+	<title>My Web Dev Project!!</title>
+	
+	<link rel="stylesheet" type="text/css" href="web.css" />
+	<script type="text/javascript">
+	function allowDrop(dragged)
+	{
+		dragged.preventDefault();
+	}
+
+	function drag(dragged)
+	{
+		dragged.dataTransfer.setData("Tool", dragged.target.id);
+	}
+
+	function drop(dragged)
+	{
+		dragged.preventDefault();
+		var data = dragged.dataTransfer.getData("Tool");
+		dragged.target.appendChild(document.getElementById(data));
+	}
+
+
+	</script>
+	
+	
+</head>
+
+<body>
+
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+	<h1 id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+		Here is your Tool Belt! <BR>
+		Drag and drop tools here!     
+	</h1>
+	<BR>
+	<P></P>
+	<BR>
+	<div>
+	<img id="drag1" class="boxed" border=1 ondragstart="drag(event)" width="10" height="70" draggable="true">
+	<img id="drag2" class="boxed" border=1 ondragstart="drag(event)" width="10" height="70" draggable="true">
+	<img id="drag3" class="boxed" border=1 ondragstart="drag(event)" width="10" height="70" draggable="true">
+	<img id="drag4" class="boxed" border=1 ondragstart="drag(event)" width="10" height="70" draggable="true">
+	<img id="drag5" class="boxed" border=1 ondragstart="drag(event)" width="10" height="70" draggable="true">
+	<img id="drag6" class="boxed" border=1 ondragstart="drag(event)" width="10" height="70" draggable="true">
+	</div>
+
+</body>
+</html>
